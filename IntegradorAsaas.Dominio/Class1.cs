@@ -1,4 +1,4 @@
-﻿namespace IntegradorAsaas.Aplicacao
+﻿namespace IntegradorAsaas.Dominio
 {
     public class Class1
     {

@@ -11,4 +11,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IntegradorAsaas.Aplicacao\IntegradorAsaas.Aplicacao.csproj" />
+    <ProjectReference Include="..\IntegradorAsaas.Dominio\IntegradorAsaas.Dominio.csproj" />
+    <ProjectReference Include="..\IntegradorAsaas.Ini\IntegradorAsaas.Ini.csproj" />
+    <ProjectReference Include="..\IntegradorAsaas.Tools\IntegradorAsaas.Tools.csproj" />
+  </ItemGroup>
+
 </Project>

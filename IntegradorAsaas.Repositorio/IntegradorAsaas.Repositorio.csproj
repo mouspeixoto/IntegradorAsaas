@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.3.7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\IntegradorAsaas.Dominio\IntegradorAsaas.Dominio.csproj" />
-    <ProjectReference Include="..\IntegradorAsaas.Repositorio\IntegradorAsaas.Repositorio.csproj" />
     <ProjectReference Include="..\IntegradorAsaas.Tools\IntegradorAsaas.Tools.csproj" />
   </ItemGroup>
 
