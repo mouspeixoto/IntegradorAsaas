@@ -1,21 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="RestSharp" Version="107.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IntegradorAsaas.Aplicacao\IntegradorAsaas.Aplicacao.csproj" />
     <ProjectReference Include="..\IntegradorAsaas.Dominio\IntegradorAsaas.Dominio.csproj" />
     <ProjectReference Include="..\IntegradorAsaas.Ini\IntegradorAsaas.Ini.csproj" />
-    <ProjectReference Include="..\IntegradorAsaas.Service\IntegradorAsaas.Service.csproj" />
     <ProjectReference Include="..\IntegradorAsaas.Tools\IntegradorAsaas.Tools.csproj" />
   </ItemGroup>
 

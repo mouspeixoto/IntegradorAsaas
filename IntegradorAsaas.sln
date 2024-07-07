@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegradorAsaas.Repositorio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegradorAsaas.Tools", "IntegradorAsaas.Tools\IntegradorAsaas.Tools.csproj", "{838AE835-02F9-4B80-BBD8-AE531DCAAC1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegradorAsaas.Service", "IntegradorAsaas.Service\IntegradorAsaas.Service.csproj", "{710037B4-B87D-4EAD-87A6-CC0B2DF87328}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{838AE835-02F9-4B80-BBD8-AE531DCAAC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{838AE835-02F9-4B80-BBD8-AE531DCAAC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{838AE835-02F9-4B80-BBD8-AE531DCAAC1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710037B4-B87D-4EAD-87A6-CC0B2DF87328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710037B4-B87D-4EAD-87A6-CC0B2DF87328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710037B4-B87D-4EAD-87A6-CC0B2DF87328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710037B4-B87D-4EAD-87A6-CC0B2DF87328}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -227,6 +227,10 @@ namespace IntegradorAsaas.Tools
             return dateTime.ToString("HH:mm");
         }
 
+        public static string ApenasNumerosRegex(string S)
+        {
+            return String.Join("", System.Text.RegularExpressions.Regex.Split(S, @"[^\d]"));
+        }
         public static string FirstCharToUpper(this string input)
         {
             string word = input.ToLower();

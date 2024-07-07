@@ -12,4 +12,8 @@
     <ProjectReference Include="..\IntegradorAsaas.Tools\IntegradorAsaas.Tools.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
