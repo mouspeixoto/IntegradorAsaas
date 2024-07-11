@@ -11,27 +11,13 @@ namespace IntegradorAsaas.API.Controllers.Cobrancas
     [Route("[controller]")]
     public class CobrancaController : Controller
     {
-        ClienteService clienteService = new ClienteService();
-        PessoaAplicacao pessoaApp = new PessoaAplicacao();
+       
 
         public CobrancaController()
         {
             
         }
 
-        [HttpPost("InserirClienteCobranca")]
-        public IActionResult InserirConta(string pessoaId)
-        {
-            Pessoa pessoa = pessoaApp.Select(pessoaId);
 
-            if (pessoa == null)
-            {
-                return NotFound("Pessoa não encontrada!");
-            }
-
-            clienteService.CriarCliente(pessoa);
-
-            return Ok("OK");
-        }
     }
 }

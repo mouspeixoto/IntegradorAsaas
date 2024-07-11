@@ -25,47 +25,34 @@ namespace IntegradorAsaas.Service.Clientes
             this.AccessToken = integracao.TOKEN;
         }
 
-        public void CriarCliente(Pessoa pessoa)
+        public async Task CriarCliente(Pessoa pessoa)
         {
-            ClienteAsaas Cliente = new ClienteAsaas();
-            Cliente.Name = pessoa.Nome;
-            Cliente.CpfCnpj = pessoa.CpfCnpj;
-            Cliente.Email = pessoa.Email;
-            Cliente.Phone = pessoa.Telefone;
-            Cliente.Address = pessoa.Endereco;
-            Cliente.AddressNumber = pessoa.EnderecoNumero;
-            Cliente.Complement = pessoa.Complemento;
-            Cliente.PostalCode = pessoa.CEP;
-            Cliente.ExternalReference = Tools.Util.ApenasNumerosRegex(pessoa.CpfCnpj);
-            Cliente.NotificationDisabled = true;
+            ClienteAsaas Cliente = new ClienteAsaas
+            {
+                Name = pessoa.Nome,
+                CpfCnpj = pessoa.CpfCnpj,
+                Email = pessoa.Email,
+                Phone = Tools.Util.ApenasNumerosRegex(pessoa.Telefone),
+                Address = pessoa.Endereco,
+                AddressNumber = pessoa.EnderecoNumero,
+                Complement = pessoa.Complemento,
+                PostalCode = pessoa.CEP,
+                ExternalReference = Tools.Util.ApenasNumerosRegex(pessoa.CpfCnpj),
+                NotificationDisabled = true
+            };
 
             string body = JsonConvert.SerializeObject(Cliente);
 
-            var client = new RestClient($"{URL}{Chamada}");
-            var request = new RestRequest()
-            {
-                Method = Method.Post
-            };
-            request.AddHeader("accept", "application/json");
+            var options = new RestClientOptions($"{URL}");
+
+            var client = new RestClient(options);
+            var request = new RestRequest($"{Chamada}", Method.Post);
             request.AddHeader("access_token", AccessToken);
-            request.AddJsonBody(body);
-
-            RestResponse response = client.ExecuteAsync(request, Method.Post).Result;
-
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                var retorno = JsonConvert.DeserializeObject<dynamic>(response.Content);
-
-                JsonSerializerSettings settings = new JsonSerializerSettings
-                {
-                    Converters = { new CustomDateConverter() }
-                };
-
-                var clienteAtualizado = JsonConvert.DeserializeObject<ClienteAsaas>(response.Content.ToString(), settings);
-                Cliente.Id = clienteAtualizado.Id;
-            }
+            request.AddHeader("Content-Type", "application/json");
+            request.AddStringBody(body, DataFormat.Json);
+            RestResponse response = await client.ExecuteAsync(request);
+            Console.WriteLine(response.Content);
 
         }
-
     }
 }
